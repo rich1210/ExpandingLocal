@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Expanding Local</string>
     <string name="action_settings">Settings</string>
+    <string-array name="state_array">
+        <item>Nevada</item>
+        <item>California</item>
+        <item>Idaho </item>
+        <item>Colorado</item>
+    </string-array>
 </resources>

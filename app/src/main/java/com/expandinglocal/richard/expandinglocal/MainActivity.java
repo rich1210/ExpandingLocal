@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TabHost;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,25 +30,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
-
-        tabHost.setup();
-
-        TabHost.TabSpec tabSpec = tabHost.newTabSpec("createInfo");
-        tabSpec.setContent(R.id.tabCreateInfo);
-        tabSpec.setIndicator("CreateInfo");
-        tabHost.addTab(tabSpec);
-
-        tabSpec = tabHost.newTabSpec("createBio");
-        tabSpec.setContent(R.id.tabCreateBio);
-        tabSpec.setIndicator("CreateBio");
-        tabHost.addTab(tabSpec);
-
-        tabSpec = tabHost.newTabSpec("createNotification");
-        tabSpec.setContent(R.id.tabCreateNotification);
-        tabSpec.setIndicator("CreateNotification");
-        tabHost.addTab(tabSpec);
-
+        Spinner spinner = (Spinner) findViewById(R.id.spinner_state);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
+                (this, R.array.state_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
     }
 
